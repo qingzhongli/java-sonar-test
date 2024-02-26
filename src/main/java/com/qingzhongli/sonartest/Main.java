@@ -8,7 +8,7 @@ public class Main {
     // IPv6 is supported with [ip] pattern
     // Reference https://github.com/apache/kafka/blob/trunk/clients/src/main/java/org/apache/kafka/common/utils/Utils.java#L97
     // https://community.appway.com/screen/kb/article/checking-strings-avoiding-catastrophic-backtracking-1482810891360
-    private static final String ENDPOINT_REGEX = "([^\\n]+)?\\[?([0-9a-zA-Z\\-%._:]*)\\]?:(\\d+)";
+    private static final String ENDPOINT_REGEX = "^([a-zA-Z]+:\\/\\/)?\\[?([0-9a-zA-Z\\-%._:]*)\\]?:(\\d+)";
     //private static final String ENDPOINT_REGEX = "([^\\n]+)[^\\n]+\\[?([0-9a-zA-Z\\-%._:]*)\\]?:(\\d+)";
 
 
