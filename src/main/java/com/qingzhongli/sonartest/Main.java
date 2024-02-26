@@ -7,7 +7,10 @@ public class Main {
     // This matches URIs of formats: host:port and protocol://host:port
     // IPv6 is supported with [ip] pattern
     // Reference https://github.com/apache/kafka/blob/trunk/clients/src/main/java/org/apache/kafka/common/utils/Utils.java#L97
-    private static final String ENDPOINT_REGEX = "[^\\n]+?\\[?([0-9a-zA-Z\\-%._:]*)\\]?:(\\d+)";
+    // https://community.appway.com/screen/kb/article/checking-strings-avoiding-catastrophic-backtracking-1482810891360
+    private static final String ENDPOINT_REGEX = "([^\\n]+)?\\[?([0-9a-zA-Z\\-%._:]*)\\]?:(\\d+)";
+    //private static final String ENDPOINT_REGEX = "([^\\n]+)[^\\n]+\\[?([0-9a-zA-Z\\-%._:]*)\\]?:(\\d+)";
+
 
     public static void main(String[] args) {
         System.out.println(Pattern.matches(ENDPOINT_REGEX, ""));
